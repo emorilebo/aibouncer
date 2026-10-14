@@ -1,0 +1,2227 @@
+{
+  "meta": {
+    "generated": "2026-10-14",
+    "method": "Every fact below was read from the operator's own page or file on the fetch date. Quotes are verbatim (checked programmatically against saved copies; whitespace and curly/straight quote marks normalised). IP JSONs were downloaded with curl -sL -A 'research (emorylebo@gmail.com)'.",
+    "purpose_enum": [
+      "training",
+      "search",
+      "user",
+      "agent",
+      "other"
+    ],
+    "respects_robots_txt_enum": [
+      true,
+      false,
+      "unspecified"
+    ],
+    "robots_txt_qualifier_enum": [
+      "honors",
+      "honors_by_default",
+      "may_ignore_user_initiated",
+      "generally_ignores",
+      "control_token_only",
+      null
+    ],
+    "verification_methods_enum": [
+      "ip_ranges_json",
+      "ip_ranges_html_embedded",
+      "ip_cidr_in_doc",
+      "fcrdns",
+      "web_bot_auth",
+      "web_bot_auth_experimental",
+      "ua_only"
+    ],
+    "timestamp_formats_seen_in_creationTime": [
+      "2026-10-14T14:46:02.000000 (no TZ)",
+      "2026-10-07T16:05:32.418450 (no TZ)",
+      "2026-10-07T00:00:00Z",
+      "2026-09-08T05:24:10.610952+00:00 (Amazon)"
+    ]
+  },
+  "agents": [
+    {
+      "id": "openai-gptbot",
+      "name": "GPTBot",
+      "operator": "OpenAI",
+      "ua_token": "GPTBot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot",
+      "robots_token": "GPTBot",
+      "robots_only": false,
+      "purpose": "training",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Disallowing GPTBot indicates a site’s content should not be used in training generative AI foundation models.",
+        "words": 16,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://openai.com/gptbot.json",
+          "doc_listed_url": "https://openai.com/gptbot.json",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-09-22T02:00:07.000000",
+          "prefix_count": 18,
+          "ipv4_count": 18,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "132.196.86.0/24",
+            "172.182.202.0/25",
+            "172.182.207.0/25"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.openai.com/api/docs/bots",
+      "doc_quote": {
+        "text": "It is used to crawl content that may be used in training our generative AI foundation models.",
+        "words": 17,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Doc calls the UA an example string; 'the version number may change' -> match the token, not the version.",
+        "When fetching robots.txt OpenAI may add a 'robots.txt' marker to the UA string."
+      ]
+    },
+    {
+      "id": "openai-oai-searchbot",
+      "name": "OAI-SearchBot",
+      "operator": "OpenAI",
+      "ua_token": "OAI-SearchBot",
+      "ua_documented": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot",
+      "robots_token": "OAI-SearchBot",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.",
+        "words": 22,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://openai.com/searchbot.json",
+          "doc_listed_url": "https://openai.com/searchbot.json",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-01-02T11:00:00.000000",
+          "prefix_count": 39,
+          "ipv4_count": 39,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "104.210.140.128/28",
+            "13.66.216.176/28",
+            "135.234.64.0/24"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.openai.com/api/docs/bots",
+      "doc_quote": {
+        "text": "OAI-SearchBot is for search. OAI-SearchBot is used to surface websites in search results in ChatGPT's search features.",
+        "words": 17,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "robots.txt fetches may use a UA containing an extra '; robots.txt;' marker.",
+        "OpenAI: if both GPTBot and OAI-SearchBot are allowed, results of one crawl may be used for both purposes."
+      ]
+    },
+    {
+      "id": "openai-chatgpt-user",
+      "name": "ChatGPT-User",
+      "operator": "OpenAI",
+      "ua_token": "ChatGPT-User",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+      "robots_token": "ChatGPT-User",
+      "robots_only": false,
+      "purpose": "user",
+      "respects_robots_txt": false,
+      "robots_txt_qualifier": "may_ignore_user_initiated",
+      "robots_quote": {
+        "text": "Because these actions are initiated by a user, robots.txt rules may not apply.",
+        "words": 13,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://openai.com/chatgpt-user.json",
+          "doc_listed_url": "https://openai.com/chatgpt-user.json",
+          "http_status": 200,
+          "content_type": "application/octet-stream",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-07T16:05:32.418450",
+          "prefix_count": 234,
+          "ipv4_count": 234,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "104.208.184.192/28",
+            "104.210.139.192/28",
+            "104.210.139.224/28"
+          ],
+          "fetched": "2026-10-14",
+          "notes": "Served as application/octet-stream and minified; do not rely on Content-Type."
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.openai.com/api/docs/bots",
+      "doc_quote": {
+        "text": "When users ask ChatGPT or a CustomGPT a question, it may visit a web page with a ChatGPT-User agent.",
+        "words": 19,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Also used for GPT Actions; doc says it is not used to determine Search eligibility."
+      ]
+    },
+    {
+      "id": "openai-oai-adsbot",
+      "name": "OAI-AdsBot",
+      "operator": "OpenAI",
+      "ua_token": "OAI-AdsBot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-AdsBot/1.0; +https://openai.com/adsbot",
+      "robots_token": "OAI-AdsBot",
+      "robots_only": false,
+      "purpose": "other",
+      "purpose_note": "Validates landing pages submitted as ChatGPT ads; doc says data is not used to train foundation models.",
+      "respects_robots_txt": "unspecified",
+      "robots_txt_qualifier": null,
+      "robots_quote": null,
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://openai.com/adsbot.json",
+          "doc_listed_url": "https://openai.com/adsbot.json",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-05-12T03:00:00.000000",
+          "prefix_count": 2,
+          "ipv4_count": 2,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "130.131.229.128/25",
+            "20.168.90.128/25"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.openai.com/api/docs/bots",
+      "doc_quote": {
+        "text": "OAI-AdsBot is used to validate the safety of web pages submitted as ads on ChatGPT.",
+        "words": 15,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Not in the original request list; documented on the same official OpenAI page."
+      ]
+    },
+    {
+      "id": "openai-chatgpt-agent",
+      "name": "ChatGPT agent / Cloud browser (Operator lineage)",
+      "operator": "OpenAI",
+      "ua_token": null,
+      "ua_documented": null,
+      "robots_token": null,
+      "robots_only": false,
+      "purpose": "agent",
+      "respects_robots_txt": "unspecified",
+      "robots_txt_qualifier": null,
+      "robots_quote": null,
+      "verification_methods": [
+        "web_bot_auth"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": {
+        "signature_agent_header_value": "\"https://chatgpt.com\"",
+        "key_directory_url": "https://chatgpt.com/.well-known/http-message-signatures-directory",
+        "key_directory_http_status": 200,
+        "key_directory_content_type": "application/http-message-signatures-directory+json",
+        "key_directory_observed": "1 Ed25519 OKP key (kid ArwjqcCqtA5oxEWkzXGC-To_0A9whHmajCHtfe8I9aY, nbf 1735689600, exp 1792619053); top-level fields keys, signature_agent='https://chatgpt.com', purpose='ai'",
+        "spec": "RFC 9421 HTTP Message Signatures",
+        "cdn_identifiers_from_doc": {
+          "cloudflare_bot_tag": "chatgpt-agent",
+          "cloudflare_detection_id": "129220581",
+          "vercel": "chatgpt-operator",
+          "akamai_human": "ChatGPT Agent"
+        },
+        "fetched": "2026-10-14"
+      },
+      "doc_url": "https://help.openai.com/en/articles/11845367-chatgpt-works-cloud-browser-allowlisting",
+      "doc_quote": {
+        "text": "ChatGPT Work's Cloud browser uses Web Bot Auth to sign outbound HTTP requests, allowing website operators to verify that requests genuinely originate from ChatGPT.",
+        "words": 24,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Article id 11845367 was originally 'ChatGPT agent allowlisting'; on 2026-10-14 its title/slug is 'ChatGPT Work's Cloud browser allowlisting' (old slug redirects).",
+        "OpenAI documents NO User-Agent token, NO IP list and NO robots.txt behaviour for this agent; verify only via the signature.",
+        "help.openai.com returned HTTP 403 to curl/WebFetch; content read via the Browser pane and via r.jina.ai reader proxy (both show identical text)."
+      ]
+    },
+    {
+      "id": "anthropic-claudebot",
+      "name": "ClaudeBot",
+      "operator": "Anthropic",
+      "ua_token": "ClaudeBot",
+      "ua_documented": null,
+      "robots_token": "ClaudeBot",
+      "robots_only": false,
+      "purpose": "training",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Anthropic’s Bots respect “do not crawl” signals by honoring industry standard directives in robots.txt.",
+        "words": 14,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://claude.com/crawling/bots.json",
+          "doc_listed_url": "https://claude.com/crawling/bots.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-07T00:00:00Z",
+          "prefix_count": 38,
+          "ipv4_count": 38,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "216.73.216.0/22",
+            "34.162.230.222/32",
+            "34.162.244.71/32"
+          ],
+          "fetched": "2026-10-14",
+          "scope": "Single list shared by all Anthropic bots (ClaudeBot, Claude-User, Claude-SearchBot); not split per bot."
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "doc_quote": {
+        "text": "ClaudeBot helps enhance the utility and safety of our generative AI models by collecting web content that could potentially contribute to their training.",
+        "words": 23,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Anthropic does not publish full UA strings on this page, only the token names; match the token.",
+        "Anthropic DOES publish IPs: the article links 'this list' to https://claude.com/crawling/bots.json and says a source IP on that list 'indicates that the crawler is coming from Anthropic'.",
+        "Supports non-standard Crawl-delay. No rDNS documented (spot check: 216.73.216.1 has no PTR record)."
+      ]
+    },
+    {
+      "id": "anthropic-claude-user",
+      "name": "Claude-User",
+      "operator": "Anthropic",
+      "ua_token": "Claude-User",
+      "ua_documented": null,
+      "robots_token": "Claude-User",
+      "robots_only": false,
+      "purpose": "user",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Claude-User allows site owners to control which sites can be accessed through these user-initiated requests.",
+        "words": 15,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://claude.com/crawling/bots.json",
+          "doc_listed_url": "https://claude.com/crawling/bots.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-07T00:00:00Z",
+          "prefix_count": 38,
+          "ipv4_count": 38,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "216.73.216.0/22",
+            "34.162.230.222/32",
+            "34.162.244.71/32"
+          ],
+          "fetched": "2026-10-14",
+          "scope": "Shared Anthropic list (all bots)."
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "doc_quote": {
+        "text": "Claude-User supports Claude AI users. When individuals ask questions to Claude, it may access websites using a Claude-User agent.",
+        "words": 19,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Unlike OpenAI/Perplexity/Google user fetchers, Anthropic states its user fetcher honors robots.txt."
+      ]
+    },
+    {
+      "id": "anthropic-claude-searchbot",
+      "name": "Claude-SearchBot",
+      "operator": "Anthropic",
+      "ua_token": "Claude-SearchBot",
+      "ua_documented": null,
+      "robots_token": "Claude-SearchBot",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Anthropic’s Bots respect “do not crawl” signals by honoring industry standard directives in robots.txt.",
+        "words": 14,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://claude.com/crawling/bots.json",
+          "doc_listed_url": "https://claude.com/crawling/bots.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-07T00:00:00Z",
+          "prefix_count": 38,
+          "ipv4_count": 38,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "216.73.216.0/22",
+            "34.162.230.222/32",
+            "34.162.244.71/32"
+          ],
+          "fetched": "2026-10-14",
+          "scope": "Shared Anthropic list (all bots)."
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "doc_quote": {
+        "text": "Claude-SearchBot navigates the web to improve search result quality for users.",
+        "words": 11,
+        "verified_verbatim": true
+      },
+      "notes": []
+    },
+    {
+      "id": "perplexity-perplexitybot",
+      "name": "PerplexityBot",
+      "operator": "Perplexity",
+      "ua_token": "PerplexityBot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+      "robots_token": "PerplexityBot",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Webmasters can use the following robots.txt tags to manage how their sites and content interact with Perplexity.",
+        "words": 17,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://www.perplexity.ai/perplexitybot.json",
+          "doc_listed_url": "https://www.perplexity.com/perplexitybot.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "Doc lists www.perplexity.com URL; it returns 302 -> https://www.perplexity.ai/perplexitybot.json (200).",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2025-02-07T16:56:00.000000",
+          "prefix_count": 8,
+          "ipv4_count": 8,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "107.20.236.150/32",
+            "3.224.62.45/32",
+            "18.210.92.235/32"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "doc_quote": {
+        "text": "PerplexityBot is designed to surface and link websites in search results on Perplexity. It is not used to crawl content for AI foundation models.",
+        "words": 24,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Old doc URL https://docs.perplexity.ai/guides/bots redirects to the doc_url."
+      ]
+    },
+    {
+      "id": "perplexity-perplexity-user",
+      "name": "Perplexity-User",
+      "operator": "Perplexity",
+      "ua_token": "Perplexity-User",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)",
+      "robots_token": "Perplexity-User",
+      "robots_only": false,
+      "purpose": "user",
+      "respects_robots_txt": false,
+      "robots_txt_qualifier": "generally_ignores",
+      "robots_quote": {
+        "text": "Since a user requested the fetch, this fetcher generally ignores robots.txt rules.",
+        "words": 12,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://www.perplexity.ai/perplexity-user.json",
+          "doc_listed_url": "https://www.perplexity.com/perplexity-user.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "Doc lists www.perplexity.com URL; it returns 302 -> https://www.perplexity.ai/perplexity-user.json (200).",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2025-10-17T10:17:00.000000",
+          "prefix_count": 4,
+          "ipv4_count": 4,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "44.208.221.197/32",
+            "34.193.163.52/32",
+            "18.97.21.0/30"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "doc_quote": {
+        "text": "Perplexity-User supports user actions within Perplexity. When users ask Perplexity a question, it might visit a web page",
+        "words": 18,
+        "verified_verbatim": true
+      },
+      "notes": []
+    },
+    {
+      "id": "google-googlebot",
+      "name": "Googlebot",
+      "operator": "Google",
+      "ua_token": "Googlebot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36",
+      "ua_alternates_documented": [
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+        "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+        "Googlebot/2.1 (+http://www.google.com/bot.html)"
+      ],
+      "robots_token": "Googlebot",
+      "robots_only": false,
+      "purpose": "search",
+      "purpose_note": "Search crawler. Whether Googlebot-crawled content may be used for Gemini training/grounding is controlled separately by the Google-Extended robots token.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "They always obey robots.txt rules when crawling automatically.",
+        "words": 8,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+          "doc_listed_url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "301 from legacy https://developers.google.com/static/search/apis/ipranges/googlebot.json (still resolves)",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"} | {\"ipv6Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-14T14:46:02.000000",
+          "prefix_count": 317,
+          "ipv4_count": 170,
+          "ipv6_count": 147,
+          "first_prefixes_sample": [
+            "2001:4860:4801:10::/64",
+            "2001:4860:4801:11::/64",
+            "2001:4860:4801:12::/64"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [
+        "googlebot.com"
+      ],
+      "rdns_documented_pattern": "crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com",
+      "web_bot_auth": null,
+      "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "doc_quote": {
+        "text": "Crawling preferences addressed to the Googlebot user agent affect Google Search (including Discover and all Google Search features)",
+        "words": 18,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Google crawler docs moved from developers.google.com/search/docs/crawling-indexing/* to developers.google.com/crawling/docs/crawlers-fetchers/* (old URLs redirect).",
+        "googlebot.json was renamed common-crawlers.json; old URL 301-redirects."
+      ]
+    },
+    {
+      "id": "google-google-extended",
+      "name": "Google-Extended",
+      "operator": "Google",
+      "ua_token": null,
+      "ua_documented": null,
+      "robots_token": "Google-Extended",
+      "robots_only": true,
+      "purpose": "training",
+      "purpose_note": "Control token for Gemini model training AND grounding in Gemini Apps / Vertex AI Grounding with Google Search; no crawler of its own.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "control_token_only",
+      "robots_quote": {
+        "text": "Google-Extended doesn't have a separate HTTP request user agent string.",
+        "words": 10,
+        "verified_verbatim": true
+      },
+      "verification_methods": [],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "doc_quote": {
+        "text": "manage whether content Google crawls from their sites may be used for training future generations of Gemini models",
+        "words": 18,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Doc: Google-Extended does not impact inclusion in Google Search and is not a ranking signal."
+      ]
+    },
+    {
+      "id": "google-googleother",
+      "name": "GoogleOther",
+      "operator": "Google",
+      "ua_token": "GoogleOther",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GoogleOther) Chrome/W.X.Y.Z Safari/537.36",
+      "ua_alternates_documented": [
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; GoogleOther)",
+        "GoogleOther-Image/1.0",
+        "GoogleOther-Video/1.0"
+      ],
+      "robots_token": "GoogleOther",
+      "robots_only": false,
+      "purpose": "other",
+      "purpose_note": "Generic crawler for product teams, e.g. one-off R&D crawls; doc does not mention AI.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "They always obey robots.txt rules when crawling automatically.",
+        "words": 8,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+          "doc_listed_url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "301 from legacy https://developers.google.com/static/search/apis/ipranges/googlebot.json (still resolves)",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"} | {\"ipv6Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-14T14:46:02.000000",
+          "prefix_count": 317,
+          "ipv4_count": 170,
+          "ipv6_count": 147,
+          "first_prefixes_sample": [
+            "2001:4860:4801:10::/64",
+            "2001:4860:4801:11::/64",
+            "2001:4860:4801:12::/64"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [
+        "googlebot.com"
+      ],
+      "rdns_documented_pattern": "crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com",
+      "web_bot_auth": null,
+      "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "doc_quote": {
+        "text": "GoogleOther is the generic crawler that may be used by various product teams for fetching publicly accessible content from sites.",
+        "words": 20,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "GoogleOther-Image and GoogleOther-Video also honor the GoogleOther token (token fallback documented by Google)."
+      ]
+    },
+    {
+      "id": "google-cloudvertexbot",
+      "name": "Google-CloudVertexBot",
+      "operator": "Google",
+      "ua_token": "Google-CloudVertexBot",
+      "ua_documented": null,
+      "robots_token": "Google-CloudVertexBot",
+      "robots_only": false,
+      "purpose": "other",
+      "purpose_note": "Site-owner-requested crawls to build Vertex AI Agents (AI data ingestion); not Search, not described as training.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "They always obey robots.txt rules when crawling automatically.",
+        "words": 8,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+          "doc_listed_url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "301 from legacy https://developers.google.com/static/search/apis/ipranges/googlebot.json (still resolves)",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"} | {\"ipv6Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-14T14:46:02.000000",
+          "prefix_count": 317,
+          "ipv4_count": 170,
+          "ipv6_count": 147,
+          "first_prefixes_sample": [
+            "2001:4860:4801:10::/64",
+            "2001:4860:4801:11::/64",
+            "2001:4860:4801:12::/64"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [
+        "googlebot.com"
+      ],
+      "rdns_documented_pattern": "crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com",
+      "web_bot_auth": null,
+      "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "doc_quote": {
+        "text": "Crawling preferences addressed to the Google-CloudVertexBot user agent affect crawls requested by the site owners' for building Vertex AI Agents.",
+        "words": 20,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Google documents only a 'User-Agent substring' (Google-CloudVertexBot), no full UA string.",
+        "robots.txt tokens: Google-CloudVertexBot AND Googlebot (rules for either apply)."
+      ]
+    },
+    {
+      "id": "google-google-agent",
+      "name": "Google-Agent",
+      "operator": "Google",
+      "ua_token": "Google-Agent",
+      "ua_documented": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent) Chrome/W.X.Y.Z Safari/537.36",
+      "ua_alternates_documented": [
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent)"
+      ],
+      "robots_token": null,
+      "robots_only": false,
+      "purpose": "agent",
+      "respects_robots_txt": false,
+      "robots_txt_qualifier": "generally_ignores",
+      "robots_quote": {
+        "text": "Because the fetch was requested by a user, these fetchers generally ignore robots.txt rules.",
+        "words": 14,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns",
+        "web_bot_auth_experimental"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+          "doc_listed_url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"} | {\"ipv6Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-14T14:46:03.000000",
+          "prefix_count": 20,
+          "ipv4_count": 12,
+          "ipv6_count": 8,
+          "first_prefixes_sample": [
+            "2001:4860:c::/124",
+            "2001:4860:c::10/124",
+            "2001:4860:c::20/124"
+          ],
+          "fetched": "2026-10-14",
+          "scope": "Doc: Google-Agent 'uses IP ranges from user-triggered-agents.json'."
+        }
+      ],
+      "rdns_suffixes": [
+        "google.com",
+        "googleusercontent.com"
+      ],
+      "rdns_documented_pattern": "***-***-***-***.gae.googleusercontent.com (user-owned, user-triggered-fetchers.json) or google-proxy-***-***-***-***.google.com (Google-owned, user-triggered-fetchers-google.json)",
+      "rdns_observed": "Spot check 2026-10-14: 136.121.16.1 -> google-proxy-136-121-16-1.google.com (observed, not a per-fetcher doc statement).",
+      "web_bot_auth": {
+        "status": "experimental; not all requests signed",
+        "signature_agent_header_value": "g=\"https://agent.bot.goog\"",
+        "key_directory_url": "https://agent.bot.goog/.well-known/http-message-signatures-directory",
+        "key_directory_http_status": 200,
+        "key_directory_observed": "multiple Ed25519 (alg EdDSA) keys",
+        "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/web-bot-auth",
+        "spec": "RFC 9421; use Signature/Signature-Input labeled 'g'",
+        "fetched": "2026-10-14"
+      },
+      "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers",
+      "doc_quote": {
+        "text": "Google-Agent is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request.",
+        "words": 19,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "No robots.txt token listed for user-triggered fetchers.",
+        "Google WBA doc: 'We don't sign every request of a particular agent' -> always fall back to IP/rDNS."
+      ]
+    },
+    {
+      "id": "google-gemini-notebook",
+      "name": "Gemini Notebook fetcher",
+      "operator": "Google",
+      "ua_token": "Google-GeminiNotebook",
+      "ua_documented": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)",
+      "ua_alternates_documented": [
+        "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)",
+        "Google-NotebookLM (former agent; doc: 'supported until August 2026')"
+      ],
+      "robots_token": null,
+      "robots_only": false,
+      "purpose": "user",
+      "respects_robots_txt": false,
+      "robots_txt_qualifier": "generally_ignores",
+      "robots_quote": {
+        "text": "Because the fetch was requested by a user, these fetchers generally ignore robots.txt rules.",
+        "words": 14,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+          "doc_listed_url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "301 from legacy https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers-google.json (still resolves)",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"} | {\"ipv6Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-14T14:46:03.000000",
+          "prefix_count": 504,
+          "ipv4_count": 252,
+          "ipv6_count": 252,
+          "first_prefixes_sample": [
+            "2001:4860:4801:4004::/64",
+            "2001:4860:4801:4008::/64",
+            "2001:4860:4801:4009::/64"
+          ],
+          "fetched": "2026-10-14",
+          "scope": "Category-level: Google does not map Gemini Notebook to one file; doc lists user-triggered-fetchers.json, user-triggered-fetchers-google.json and user-triggered-agents.json for user-triggered fetchers."
+        },
+        {
+          "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+          "doc_listed_url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "301 from legacy https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json (still resolves)",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"} | {\"ipv6Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-10-14T14:46:04.000000",
+          "prefix_count": 1068,
+          "ipv4_count": 534,
+          "ipv6_count": 534,
+          "first_prefixes_sample": [
+            "2404:f340:10:4000::/64",
+            "2404:f340:10:4001::/64",
+            "2404:f340:10:4002::/64"
+          ],
+          "fetched": "2026-10-14",
+          "scope": "Category-level (see above). These IPs resolve to gae.googleusercontent.com and are also used by sites running on Google Cloud."
+        }
+      ],
+      "rdns_suffixes": [
+        "google.com",
+        "googleusercontent.com"
+      ],
+      "rdns_documented_pattern": "***-***-***-***.gae.googleusercontent.com (user-owned, user-triggered-fetchers.json) or google-proxy-***-***-***-***.google.com (Google-owned, user-triggered-fetchers-google.json)",
+      "web_bot_auth": null,
+      "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers",
+      "doc_quote": {
+        "text": "The Gemini Notebook fetcher requests individual URLs that Gemini Notebook users have provided as sources for their projects.",
+        "words": 18,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "CAUTION: user-triggered-fetchers.json covers GCP customer traffic too; an IP match there does not prove the request came from a Google product."
+      ]
+    },
+    {
+      "id": "microsoft-bingbot",
+      "name": "Bingbot",
+      "operator": "Microsoft",
+      "ua_token": "bingbot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/W.X.Y.Z Safari/537.36",
+      "ua_alternates_documented": [
+        "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36  (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+      ],
+      "robots_token": "bingbot",
+      "robots_only": false,
+      "purpose": "search",
+      "purpose_note": "Microsoft's crawler pages read do NOT mention AI or Copilot; included because requested. Any Copilot linkage is not established from an official source here.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Robots.txt files can be configured to tell Bing crawlers how to interact with your website.",
+        "words": 15,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://www.bing.com/toolbox/bingbot.json",
+          "doc_listed_url": "http://www.bing.com/toolbox/bingbot.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2024-01-03T10:00:00.121331",
+          "prefix_count": 28,
+          "ipv4_count": 28,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "157.55.39.0/24",
+            "207.46.13.0/24",
+            "40.77.167.0/24"
+          ],
+          "fetched": "2026-10-14",
+          "notes": "creationTime is 2024-01-03 although Bing says 'Refresh this list daily'. Third-party reports (not verified here) say bingbot.json and rDNS can disagree; prefer FCrDNS for Bing."
+        }
+      ],
+      "rdns_suffixes": [
+        "search.msn.com"
+      ],
+      "rdns_documented_pattern": "e.g. msnbot-157-55-33-18.search.msn.com",
+      "web_bot_auth": null,
+      "doc_url": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+      "doc_url_verification": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26",
+      "doc_quote": {
+        "text": "Bingbot is our standard crawler and handles most of our crawling needs each day.",
+        "words": 14,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Bing help pages are client-rendered; read via the Browser pane (curl/WebFetch return an empty shell).",
+        "The same bingbot/2.0 UA is also used by BingPreview per Bing's table."
+      ]
+    },
+    {
+      "id": "apple-applebot",
+      "name": "Applebot",
+      "operator": "Apple",
+      "ua_token": "Applebot",
+      "ua_documented": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+      "ua_alternates_documented": [
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1 (Applebot/0.1; +http://www.apple.com/go/applebot)"
+      ],
+      "robots_token": "Applebot",
+      "robots_only": false,
+      "purpose": "search",
+      "purpose_note": "Primary use is Spotlight/Siri/Safari search; Apple says the data 'may also be used to help train Apple foundation models' unless Applebot-Extended is disallowed, and may ground Siri/Search AI answers unless nosnippet is used.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "If robots instructions don't mention Applebot but mention Googlebot, the Apple robot will follow Googlebot instructions.",
+        "words": 16,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://search.developer.apple.com/applebot.json",
+          "doc_listed_url": "http://search.developer.apple.com/applebot.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": "Doc links the http:// URL; it 301-redirects to https://search.developer.apple.com/applebot.json (200).",
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-09-15T10:00:00.000000",
+          "prefix_count": 24,
+          "ipv4_count": 24,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "17.241.208.160/27",
+            "17.241.193.160/27",
+            "17.241.200.160/27"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [
+        "applebot.apple.com"
+      ],
+      "rdns_documented_pattern": "*.applebot.apple.com, e.g. 17-58-101-179.applebot.apple.com",
+      "web_bot_auth": null,
+      "doc_url": "https://support.apple.com/en-us/119829",
+      "doc_quote": {
+        "text": "The data crawled by Applebot is used to power various features, such as the search technology integrated into many user experiences in Appleʼs ecosystem",
+        "words": 24,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Applebot does not follow crawl-delay.",
+        "iTMS UA (Apple Podcasts) comes from applebot.apple.com hosts and does not follow robots.txt; not AI-related.",
+        "support.apple.com did not resolve from this sandbox (DNS) and WebFetch failed; page read via r.jina.ai reader proxy (page 'Published Date: September 04, 2026')."
+      ]
+    },
+    {
+      "id": "apple-applebot-extended",
+      "name": "Applebot-Extended",
+      "operator": "Apple",
+      "ua_token": null,
+      "ua_documented": null,
+      "robots_token": "Applebot-Extended",
+      "robots_only": true,
+      "purpose": "training",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "control_token_only",
+      "robots_quote": {
+        "text": "Applebot-Extended does not crawl webpages.",
+        "words": 5,
+        "verified_verbatim": true
+      },
+      "verification_methods": [],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://support.apple.com/en-us/119829",
+      "doc_quote": {
+        "text": "opt out of their website content being used to train Apple’s general purpose foundation models",
+        "words": 15,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Applebot-Extended is only used to determine how to use data crawled by Applebot."
+      ]
+    },
+    {
+      "id": "meta-externalagent",
+      "name": "Meta-ExternalAgent",
+      "operator": "Meta",
+      "ua_token": "meta-externalagent",
+      "ua_documented": "meta-externalagent/1.1 (+/documentation/sharing/webmasters/web-crawlers)",
+      "ua_alternates_documented": [
+        "meta-externalagent/1.1"
+      ],
+      "robots_token": "meta-externalagent",
+      "robots_only": false,
+      "purpose": "training",
+      "purpose_note": "Doc: training foundation AI models OR improving products by indexing content directly.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "In order to block these crawlers, add a disallow for the relevant crawler to robots.txt.",
+        "words": 15,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ua_only"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers",
+      "doc_quote": {
+        "text": "The Meta-ExternalAgent crawler crawls the web for use cases such as training foundation AI models or improving products by indexing content directly.",
+        "words": 22,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Meta's page mentions allow-listing 'the IP addresses (more secure)' but publishes no IP list or rDNS; no official verification method found.",
+        "The '(+/documentation/...)' relative path is shown verbatim in Meta's rendered doc; real traffic may carry an absolute URL. Match the token only.",
+        "Meta caches robots.txt up to 24 hours."
+      ]
+    },
+    {
+      "id": "meta-externalfetcher",
+      "name": "Meta-ExternalFetcher",
+      "operator": "Meta",
+      "ua_token": "meta-externalfetcher",
+      "ua_documented": "meta-externalfetcher/1.1 (+/documentation/sharing/webmasters/web-crawlers)",
+      "ua_alternates_documented": [
+        "meta-externalfetcher/1.1"
+      ],
+      "robots_token": "meta-externalfetcher",
+      "robots_only": false,
+      "purpose": "user",
+      "purpose_note": "User-requested fetches; doc also cites agentic AI ('helping AI navigate websites to complete tasks for users'). Could be classified agent.",
+      "respects_robots_txt": false,
+      "robots_txt_qualifier": "may_ignore_user_initiated",
+      "robots_quote": {
+        "text": "Accordingly, this crawler may bypass robots.txt rules.",
+        "words": 7,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ua_only"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers",
+      "doc_quote": {
+        "text": "The Meta-ExternalFetcher crawler fetches individual links at a user's request",
+        "words": 10,
+        "verified_verbatim": true
+      },
+      "notes": []
+    },
+    {
+      "id": "meta-webindexer",
+      "name": "Meta-WebIndexer",
+      "operator": "Meta",
+      "ua_token": "meta-webindexer",
+      "ua_documented": "meta-webindexer/1.1 (+/documentation/sharing/webmasters/web-crawlers)",
+      "ua_alternates_documented": [
+        "meta-webindexer/1.1"
+      ],
+      "robots_token": "meta-webindexer",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Allowing Meta-WebIndexer in your robots.txt file helps us cite and link to your content in Meta AI",
+        "words": 17,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ua_only"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers",
+      "doc_quote": {
+        "text": "The Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality for users.",
+        "words": 15,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "New since earlier Meta crawler lists; not in the original request list."
+      ]
+    },
+    {
+      "id": "commoncrawl-ccbot",
+      "name": "CCBot",
+      "operator": "Common Crawl Foundation",
+      "ua_token": "CCBot",
+      "ua_documented": "CCBot/2.0 (https://commoncrawl.org/faq/)",
+      "robots_token": "CCBot",
+      "robots_only": false,
+      "purpose": "other",
+      "purpose_note": "Builds an open web-crawl dataset; the pages read do not describe CCBot as AI-training. The dataset's downstream use for AI training is not an operator claim on these pages.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "CCBot is an automated crawler, checking first the robots.txt, and if crawling a page is allowed, fetches pages using HTTP GET requests.",
+        "words": 22,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json",
+        "fcrdns"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://index.commoncrawl.org/ccbot.json",
+          "doc_listed_url": "https://index.commoncrawl.org/ccbot.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"synctoken\":<string>,\"creationTime\":<string>,\"notes\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"} | {\"ipv6Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-08-11T13:40:00Z",
+          "prefix_count": 5,
+          "ipv4_count": 4,
+          "ipv6_count": 1,
+          "first_prefixes_sample": [
+            "2600:1f28:365:8000::/56",
+            "3.41.188.32/29",
+            "18.97.9.168/29"
+          ],
+          "fetched": "2026-10-14",
+          "notes": "Extra top-level keys: 'synctoken' (lower-case t) and 'notes'; creationTime ends in 'Z'."
+        }
+      ],
+      "rdns_suffixes": [
+        "crawl.commoncrawl.org"
+      ],
+      "rdns_documented_pattern": "e.g. 18-97-14-84.crawl.commoncrawl.org; IPv4 only ('except over IPv6 where reverse DNS is not yet supported')",
+      "web_bot_auth": null,
+      "doc_url": "https://commoncrawl.org/ccbot",
+      "doc_quote": {
+        "text": "CCBot identifies itself in its UserAgent string as: CCBot/2.0 (https://commoncrawl.org/faq/)",
+        "words": 10,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Obeys Crawl-delay; follows up to five redirects for robots.txt per RFC 9309 (FAQ)."
+      ]
+    },
+    {
+      "id": "amazon-amazonbot",
+      "name": "Amazonbot",
+      "operator": "Amazon",
+      "ua_token": "Amazonbot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36",
+      "robots_token": "Amazonbot",
+      "robots_only": false,
+      "purpose": "training",
+      "purpose_note": "Doc: used to improve products and services and 'may be used to train Amazon AI models' (mixed purpose).",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Automated crawling from these listed user agents respects the Robots Exclusion Protocol, honoring the user-agent and the allow/disallow directives.",
+        "words": 19,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_html_embedded"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developer.amazon.com/amazonbot/ip-addresses/",
+          "doc_listed_url": "https://developer.amazon.com/amazonbot/ip-addresses/",
+          "http_status": 200,
+          "content_type": "text/html;charset=utf-8",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":\"<string>\",\"prefixes\":[{\"ipv4Prefix\":\"<bare IPv4, no /len>\"}]}  (embedded inside an HTML page code block, not served as JSON)",
+          "creationTime": "2026-09-08T05:24:10.610952+00:00",
+          "prefix_count": 1292,
+          "ipv4_count": 1292,
+          "ipv6_count": 0,
+          "machine_readable": false,
+          "scope": "Amazonbot",
+          "fetched": "2026-10-14",
+          "notes": "Official page is HTML with the JSON inside a 'Copy code' block; a parser must extract it from HTML. Key name and CIDR format differ between Amazon's three lists."
+        }
+      ],
+      "rdns_suffixes": [],
+      "rdns_observed": "Spot check 2026-10-14: listed IPs PTR to ec2-*.compute-1.amazonaws.com, so rDNS cannot identify Amazonbot. Current doc documents no rDNS suffix.",
+      "web_bot_auth": null,
+      "doc_url": "https://developer.amazon.com/amazonbot",
+      "doc_quote": {
+        "text": "This helps us provide more accurate information to customers and may be used to train Amazon AI models.",
+        "words": 18,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "No crawl-delay support. noarchive meta = 'do not use the page for model training'. Unfetchable robots.txt treated as non-existent (differs from RFC 9309 5xx rule)."
+      ]
+    },
+    {
+      "id": "amazon-amzn-searchbot",
+      "name": "Amzn-SearchBot",
+      "operator": "Amazon",
+      "ua_token": "Amzn-SearchBot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36",
+      "robots_token": "Amzn-SearchBot",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "If robots.txt files don’t mention Amzn-SearchBot but allow other search bots, Amzn-SearchBot will crawl in accordance with the robots.txt directives given to other search bots.",
+        "words": 25,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_html_embedded"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/",
+          "doc_listed_url": "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/",
+          "http_status": 200,
+          "content_type": "text/html;charset=utf-8",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":\"<string>\",\"prefixes\":[{\"ip_prefix\":\"<cidr>\"}]}  (embedded inside an HTML page code block, not served as JSON)",
+          "creationTime": "2026-09-08T05:24:10.610952+00:00",
+          "prefix_count": 816,
+          "ipv4_count": 816,
+          "ipv6_count": 0,
+          "machine_readable": false,
+          "scope": "Amzn-SearchBot",
+          "fetched": "2026-10-14",
+          "notes": "Official page is HTML with the JSON inside a 'Copy code' block; a parser must extract it from HTML. Key name and CIDR format differ between Amazon's three lists."
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developer.amazon.com/amazonbot",
+      "doc_quote": {
+        "text": "Amzn-SearchBot is used to improve search experiences in Amazon products and services.",
+        "words": 12,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Doc: 'Amzn-SearchBot does not crawl content for generative AI model training.'",
+        "Non-RFC fallback: if not named, follows rules given to 'other search bots' (unspecified which)."
+      ]
+    },
+    {
+      "id": "amazon-amzn-user",
+      "name": "Amzn-User",
+      "operator": "Amazon",
+      "ua_token": "Amzn-User",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-User/0.1) Chrome/W.X.Y.Z Safari/537.36",
+      "robots_token": "Amzn-User",
+      "robots_only": false,
+      "purpose": "user",
+      "respects_robots_txt": false,
+      "robots_txt_qualifier": "may_ignore_user_initiated",
+      "robots_quote": {
+        "text": "Because actions taken by Amzn-User can be initiated by a user, it may not follow all robots.txt directives.",
+        "words": 18,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_html_embedded"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://developer.amazon.com/amazonbot/live-ip-addresses/",
+          "doc_listed_url": "https://developer.amazon.com/amazonbot/live-ip-addresses/",
+          "http_status": 200,
+          "content_type": "text/html;charset=utf-8",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":\"<string>\",\"prefixes\":[{\"ipv4Prefix\":\"<bare IPv4, no /len>\"}]}  (embedded inside an HTML page code block, not served as JSON)",
+          "creationTime": "2025-11-04T15:57:38.092840+00:00",
+          "prefix_count": 1023,
+          "ipv4_count": 1023,
+          "ipv6_count": 0,
+          "machine_readable": false,
+          "scope": "Amzn-User",
+          "fetched": "2026-10-14",
+          "notes": "Official page is HTML with the JSON inside a 'Copy code' block; a parser must extract it from HTML. Key name and CIDR format differ between Amazon's three lists."
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://developer.amazon.com/amazonbot",
+      "doc_quote": {
+        "text": "Amzn-User supports user actions, such as responding to Alexa queries that require up-to-date information.",
+        "words": 14,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Doc: 'Amzn-User does not crawl content for generative AI model training.'"
+      ]
+    },
+    {
+      "id": "duckduckgo-duckassistbot",
+      "name": "DuckAssistBot",
+      "operator": "DuckDuckGo",
+      "ua_token": "DuckAssistBot",
+      "ua_documented": "DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistbot.html)",
+      "robots_token": "DuckAssistBot",
+      "robots_only": false,
+      "purpose": "search",
+      "purpose_note": "Real-time crawl for AI-assisted answers that cite sources; doc says not used to train AI models.",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Once you’ve updated the file to disallow the DuckAssistBot user agent, the change will take effect after 72 hours",
+        "words": 19,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://duckduckgo.com/duckassistbot.json",
+          "doc_listed_url": "https://duckduckgo.com/duckassistbot.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-09-01T12:44:58.000000",
+          "prefix_count": 486,
+          "ipv4_count": 486,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "104.43.54.127/32",
+            "104.43.55.116/32",
+            "104.43.55.117/32"
+          ],
+          "fetched": "2026-10-14",
+          "notes": "Byte-identical to https://duckduckgo.com/duckduckbot.json on 2026-10-14 (shared IP pool with the search crawler) -> IP alone cannot distinguish DuckAssistBot from DuckDuckBot; combine with UA."
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+      "doc_quote": {
+        "text": "DuckAssistBot is a web crawler for DuckDuckGo Search that crawls pages in real-time for our AI-assisted answers, which prominently cite their sources.",
+        "words": 22,
+        "verified_verbatim": true
+      },
+      "notes": []
+    },
+    {
+      "id": "mistral-mistralai-user",
+      "name": "MistralAI-User",
+      "operator": "Mistral AI",
+      "ua_token": "MistralAI-User",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)",
+      "robots_token": "MistralAI-User",
+      "robots_only": false,
+      "purpose": "user",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "MistralAI-User governs which sites these user requests can be made to.",
+        "words": 11,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://mistral.ai/mistralai-user-ips.json",
+          "doc_listed_url": "https://mistral.ai/mistralai-user-ips.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2025-02-19T12:00:00.000000",
+          "prefix_count": 4,
+          "ipv4_count": 4,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "20.240.160.161/32",
+            "20.240.160.1/32",
+            "20.240.194.83/32"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://docs.mistral.ai/robots",
+      "doc_quote": {
+        "text": "MistralAI-User is for user actions in Vibe. When users ask Vibe a question, it may visit a web page",
+        "words": 19,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Mistral's doc now names the assistant 'Vibe' (formerly Le Chat in earlier versions of this page)."
+      ]
+    },
+    {
+      "id": "mistral-mistralai-index",
+      "name": "MistralAI-Index",
+      "operator": "Mistral AI",
+      "ua_token": "MistralAI-Index",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)",
+      "robots_token": "MistralAI-Index",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "To help webmasters manage how their sites and content interact with AI, Mistral uses specific robots.txt tags.",
+        "words": 17,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ip_ranges_json"
+      ],
+      "ip_ranges": [
+        {
+          "url": "https://mistral.ai/mistralai-index-ips.json",
+          "doc_listed_url": "https://mistral.ai/mistralai-index-ips.json",
+          "http_status": 200,
+          "content_type": "application/json",
+          "redirect": null,
+          "json_shape": "{\"creationTime\":<string>,\"prefixes\":[{\"ipv4Prefix\":\"<cidr>\"}]}",
+          "creationTime": "2026-04-19T12:00:00.000000",
+          "prefix_count": 2,
+          "ipv4_count": 2,
+          "ipv6_count": 0,
+          "first_prefixes_sample": [
+            "135.225.57.92/32",
+            "20.240.192.194/32"
+          ],
+          "fetched": "2026-10-14"
+        }
+      ],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://docs.mistral.ai/robots",
+      "doc_quote": {
+        "text": "MistralAI-Index is for automated crawling of the web for indexing purposes only.",
+        "words": 12,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Doc: content crawled by MistralAI-Index is not used for generative AI training."
+      ]
+    },
+    {
+      "id": "mistral-mistralai-training",
+      "name": "MistralAI-Training",
+      "operator": "Mistral AI",
+      "ua_token": "MistralAI-Training",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Training/1.0; +https://docs.mistral.ai/robots)",
+      "robots_token": "MistralAI-Training",
+      "robots_only": false,
+      "purpose": "training",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "Webmasters can disallow this user agent in their robots.txt file.",
+        "words": 10,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ua_only"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://docs.mistral.ai/robots",
+      "doc_quote": {
+        "text": "MistralAI-Training crawls web content to help build datasets for training Mistral generative AI models.",
+        "words": 14,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "No IP list published for MistralAI-Training (only User and Index have JSON links on the page)."
+      ]
+    },
+    {
+      "id": "you-youbot",
+      "name": "YouBot",
+      "operator": "You.com",
+      "ua_token": "YouBot",
+      "ua_documented": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; YouBot/1.0; +https://docs.you.com/youbot; env:prod) Chrome/X.X.X.X Safari/537.36",
+      "robots_token": "YouBot",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors",
+      "robots_quote": {
+        "text": "It respects robots.txt directives and crawl rate preferences",
+        "words": 8,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "web_bot_auth",
+        "fcrdns",
+        "ip_cidr_in_doc"
+      ],
+      "ip_ranges": [],
+      "ip_cidrs_in_doc": [
+        "68.67.112.0/24"
+      ],
+      "rdns_suffixes": [
+        "search.you.com"
+      ],
+      "rdns_documented_pattern": "youbot-{octets-with-hyphens}.search.you.com",
+      "rdns_observed": "Spot check 2026-10-14: 68.67.112.106 -> youbot-68-67-112-106.search.you.com.",
+      "web_bot_auth": {
+        "signature_agent_header_value": null,
+        "key_directory_url": "https://you.com/.well-known/http-message-signatures-directory",
+        "key_directory_http_status": 200,
+        "key_directory_content_type": "application/http-message-signatures-directory+json",
+        "key_directory_observed": "1 Ed25519 OKP key",
+        "spec": "Cloudflare Web Bot Auth / RFC 9421 (doc does not state the Signature-Agent value)",
+        "fetched": "2026-10-14"
+      },
+      "doc_url": "https://docs.you.com/youbot",
+      "doc_quote": {
+        "text": "YouBot is the web crawler that powers the You.com search engine.",
+        "words": 11,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "No JSON IP list; the doc states a single CIDR. Caches robots.txt for 30 minutes; honors Crawl-delay."
+      ]
+    },
+    {
+      "id": "diffbot-diffbot",
+      "name": "Diffbot",
+      "operator": "Diffbot",
+      "ua_token": "Diffbot",
+      "ua_documented": null,
+      "robots_token": "Diffbot",
+      "robots_only": false,
+      "purpose": "search",
+      "respects_robots_txt": true,
+      "robots_txt_qualifier": "honors_by_default",
+      "robots_quote": {
+        "text": "By default Diffbot's web crawls adhere to a site’s robots.txt instructions, including the disallow and crawl-delay directives.",
+        "words": 17,
+        "verified_verbatim": true
+      },
+      "verification_methods": [
+        "ua_only"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://www.diffbot.com/docs/crawl/faq/robots-txt",
+      "doc_quote": {
+        "text": "General, proactive web crawling for building a general search engine.",
+        "words": 10,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Doc: 'It is not used for AI training.'",
+        "Doc: robots.txt can be 'ignored/overridden' by partnership/agreement. Customers' Crawlbot/Extract jobs may use their own UA strings.",
+        "Full UA string not documented."
+      ]
+    },
+    {
+      "id": "diffbot-diffbot-user",
+      "name": "Diffbot-User",
+      "operator": "Diffbot",
+      "ua_token": "Diffbot-User",
+      "ua_documented": null,
+      "robots_token": "Diffbot-User",
+      "robots_only": false,
+      "purpose": "user",
+      "respects_robots_txt": "unspecified",
+      "robots_txt_qualifier": null,
+      "robots_quote": null,
+      "verification_methods": [
+        "ua_only"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://www.diffbot.com/docs/crawl/faq/robots-txt",
+      "doc_quote": {
+        "text": "This is used by requests originating on behalf of a human user browsing a URL using Diffbot software, in response to their input.",
+        "words": 23,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Doc's 'Similar To' column says 'Mozilla, AppleWebKit' - i.e. browser-like UA; full string not documented."
+      ]
+    },
+    {
+      "id": "ai2-ai2bot",
+      "name": "AI2Bot",
+      "operator": "Allen Institute for AI (Ai2)",
+      "ua_token": "AI2Bot",
+      "ua_documented": "Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)",
+      "robots_token": "AI2Bot",
+      "robots_only": false,
+      "purpose": "training",
+      "respects_robots_txt": "unspecified",
+      "robots_txt_qualifier": null,
+      "robots_quote": null,
+      "verification_methods": [
+        "ua_only"
+      ],
+      "ip_ranges": [],
+      "rdns_suffixes": [],
+      "web_bot_auth": null,
+      "doc_url": "https://allenai.org/crawler",
+      "doc_quote": {
+        "text": "The AI2 Bot explores certain domains to find web content. This web content is used to train open language models.",
+        "words": 20,
+        "verified_verbatim": true
+      },
+      "notes": [
+        "Page says the UA 'can be used to filter or reject traffic' but does not mention robots.txt. Page is client-rendered; read via Browser pane.",
+        "RFC 9309 ABNF product-token excludes digits, so 'AI2Bot' is not a strictly valid robots.txt token; a strict parser would drop 'User-agent: AI2Bot' lines. Match case-insensitively and tolerate digits."
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "name": "Bytespider",
+      "operator": "ByteDance",
+      "reason": "No operator-owned documentation found (searched bytedance.com and general web; only third-party directories describe it). Not added without an official source."
+    },
+    {
+      "name": "TikTokSpider",
+      "operator": "ByteDance",
+      "reason": "No operator-owned documentation found; third-party directories disagree on its purpose."
+    },
+    {
+      "name": "FacebookBot",
+      "operator": "Meta",
+      "reason": "Not listed on Meta's current Web Crawlers page (updated May 21, 2026); no other official source found."
+    },
+    {
+      "name": "FacebookExternalHit",
+      "operator": "Meta",
+      "reason": "Official, but described as link-preview crawler for shared links, not AI-related. UA: facebookexternalhit/1.1."
+    },
+    {
+      "name": "Meta-ExternalAds",
+      "operator": "Meta",
+      "reason": "Official, but described as advertising/business products crawler, not AI-related. UA token: meta-externalads."
+    },
+    {
+      "name": "Cohere (Coherebot / cohere-ai / cohere-training-data-crawler)",
+      "operator": "Cohere",
+      "reason": "Cohere's official page (https://docs.cohere.com/docs/cohere-web-crawlers) says it does not currently use any bot to crawl for training; its table is 'N/A'. 'Coherebot' appears only as a hypothetical robots.txt example. Third-party tokens unconfirmed."
+    },
+    {
+      "name": "GrokBot / xAI-Grok / Grok-DeepSearch",
+      "operator": "xAI",
+      "reason": "No xAI crawler/robots.txt documentation found on x.ai/docs.x.ai; tokens appear only in third-party directories."
+    },
+    {
+      "name": "PetalBot",
+      "operator": "Huawei",
+      "reason": "Official page https://webmaster.petalsearch.com/site/petalbot rendered blank (JS app) and aspiegel.com/petalbot returned 404; could not confirm from an official source whether it is AI-related, so skipped per instructions."
+    },
+    {
+      "name": "NovaAct",
+      "operator": "Amazon",
+      "reason": "No official Amazon documentation of a UA token or robots behaviour found (AWS Nova Act service card has no UA/robots text); token appears only in third-party directories."
+    },
+    {
+      "name": "Microsoft Copilot (distinct crawler/agent)",
+      "operator": "Microsoft",
+      "reason": "Bing's official crawler list names Bingbot, AdIdxBot, BingPreview, MicrosoftPreview, BingVideoPreview only; no Copilot-specific UA documented."
+    },
+    {
+      "name": "Perplexity Comet / Claude in Chrome / other browser agents",
+      "operator": "Perplexity / Anthropic",
+      "reason": "No operator documentation of a UA token, IP list or Web Bot Auth identity found; probes of claude.ai, claude.com, www.perplexity.ai, mistral.ai /.well-known/http-message-signatures-directory returned 404."
+    },
+    {
+      "name": "Google special-case crawlers (AdsBot-Google, Mediapartners-Google, APIs-Google, Google-Safety)",
+      "operator": "Google",
+      "reason": "Official but not AI-related. JSON: https://developers.google.com/static/crawling/ipranges/special-crawlers.json (200, 272 prefixes, rDNS rate-limited-proxy-*.google.com)."
+    },
+    {
+      "name": "Google Read Aloud, Feedfetcher, Google Site Verifier, etc.",
+      "operator": "Google",
+      "reason": "Official user-triggered fetchers but not AI-related."
+    },
+    {
+      "name": "DuckDuckBot",
+      "operator": "DuckDuckGo",
+      "reason": "Official search crawler, not AI-related; noted only because its JSON is byte-identical to duckassistbot.json."
+    }
+  ],
+  "referrals": [
+    {
+      "assistant": "ChatGPT (OpenAI)",
+      "referrer_hosts": [
+        "chatgpt.com",
+        "chat.openai.com"
+      ],
+      "utm_source_values": [
+        "chatgpt.com"
+      ],
+      "evidence_url": "https://web.archive.org/web/20261004224023/https://help.openai.com/en/articles/12627856-publishers-and-developers-faq",
+      "evidence_quality": "official",
+      "notes": "utm_source=chatgpt.com: OFFICIAL (OpenAI Publishers & Developers FAQ). The live URL now redirects to an unrelated 'ChatGPT Atlas retirement' article (checked 2026-10-14), so the statement was read from the Wayback snapshot of 2026-10-04. Referrer hostnames are NOT stated by OpenAI; hosts come from Matomo's list (reputable-observed). OpenAI scopes the UTM to 'ChatGPT search results'; links elsewhere/in apps may lack it, and apps may strip Referer.",
+      "utm_quote": {
+        "text": "ChatGPT automatically includes the UTM parameter utm_source=chatgpt.com in referral URLs, enabling clear tracking and analysis of inbound traffic from ChatGPT search results.",
+        "words": 22,
+        "verified_verbatim": true
+      },
+      "referrer_hosts_evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "referrer_hosts_evidence_quality": "reputable-observed",
+      "corroborating_url": "https://www.searchenginejournal.com/searchgpt-launches-as-chatgpts-real-time-search-feature/531461/",
+      "corroborating_quote": {
+        "text": "All citations include “utm_source=chatgpt.com,” enabling publishers to track traffic from the platform directly in their analytics.",
+        "words": 16,
+        "verified_verbatim": true
+      }
+    },
+    {
+      "assistant": "Perplexity",
+      "referrer_hosts": [
+        "perplexity.ai"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "No official Perplexity statement on Referer or UTM found. Match perplexity.ai and subdomains (e.g. www.perplexity.ai). Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Gemini (Google)",
+      "referrer_hosts": [
+        "gemini.google.com",
+        "bard.google.com"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Google Analytics official doc names Gemini as an 'AI Assistant' channel source but does not publish hostnames (https://support.google.com/analytics/answer/9756891?hl=en). bard.google.com is legacy. Google AI Overviews / AI Mode clicks arrive as google.com and are excluded from GA4's AI Assistant channel. Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Microsoft Copilot",
+      "referrer_hosts": [
+        "copilot.microsoft.com"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "GA4 official doc names Copilot as an AI Assistant source (no hostnames). Copilot inside bing.com/Edge may surface as bing.com (not verified). Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Claude (Anthropic)",
+      "referrer_hosts": [
+        "claude.ai"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "No Anthropic statement on Referer/UTM found. Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "DeepSeek",
+      "referrer_hosts": [
+        "chat.deepseek.com"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "GA4 official doc names Deepseek as an AI Assistant source (no hostnames). Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Grok (xAI)",
+      "referrer_hosts": [
+        "grok.com",
+        "x.com/i/grok"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "GA4 official doc names Grok as an AI Assistant source (no hostnames). 'x.com/i/grok' is a host+path pattern: a hostname-only matcher on x.com would misclassify ordinary X/Twitter referrals. Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Meta AI",
+      "referrer_hosts": [
+        "meta.ai"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Match meta.ai and www.meta.ai. Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Mistral Le Chat / Vibe",
+      "referrer_hosts": [
+        "chat.mistral.ai"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Mistral's crawler doc now calls the assistant 'Vibe'; whether its referrer host changed from chat.mistral.ai is NOT verified. Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "You.com",
+      "referrer_hosts": [
+        "you.com"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "you.com is also a search engine, so this is not exclusively AI-assistant traffic. Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Duck.ai (DuckDuckGo)",
+      "referrer_hosts": [
+        "duck.ai"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "NotebookLM / Gemini Notebook (Google)",
+      "referrer_hosts": [
+        "notebooklm.google.com"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Qwen (Alibaba)",
+      "referrer_hosts": [
+        "chat.qwen.ai"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Baidu ERNIE / Yiyan",
+      "referrer_hosts": [
+        "yiyan.baidu.com",
+        "ai.baidu.com"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "ChatGLM (Zhipu)",
+      "referrer_hosts": [
+        "chatglm.cn"
+      ],
+      "utm_source_values": [],
+      "evidence_url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "evidence_quality": "reputable-observed",
+      "notes": "Matomo (open-source analytics vendor) maintained AI-assistant referrer definitions; file last changed 2026-07-15 per repo commit feed. Observed/curated, not operator-confirmed."
+    },
+    {
+      "assistant": "Phind",
+      "referrer_hosts": [],
+      "utm_source_values": [],
+      "evidence_url": null,
+      "evidence_quality": "weak",
+      "notes": "No official or reputable-observed evidence found for Phind referrer hosts/UTM; not in Matomo's list. Leave out or treat 'phind.com' as an unverified guess."
+    }
+  ],
+  "referrals_context": {
+    "ga4_ai_assistant_channel": {
+      "url": "https://support.google.com/analytics/answer/9756891?hl=en",
+      "fetched": "2026-10-14",
+      "evidence_quality": "official (Google Analytics)",
+      "quote": {
+        "text": "AI Assistant is the channel by which users arrive at your site from sources like ChatGPT, Gemini, Deepseek, Copilot, or Grok.",
+        "words": 21,
+        "verified_verbatim": true
+      },
+      "rule_quote": {
+        "text": "The medium is set to “ai-assistant” and the campaign is set to “(ai-assistant)” if the referrer matches a list of AI Assistants.",
+        "words": 22,
+        "verified_verbatim": true
+      },
+      "notes": "Google does not publish the referrer list. Doc: channel 'excludes Google's AI Overviews and AI Mode'."
+    },
+    "matomo_list": {
+      "url": "https://github.com/matomo-org/searchengine-and-social-list/blob/master/AIAssistants.yml",
+      "raw_url": "https://raw.githubusercontent.com/matomo-org/searchengine-and-social-list/master/AIAssistants.yml",
+      "fetched": "2026-10-14",
+      "last_commit": "2026-07-15T21:31:22Z",
+      "extra_entries_not_tabulated": {
+        "Chat+": [
+          "chatplus.com",
+          "chat-gpt.org"
+        ],
+        "Jasper": [
+          "app.jasper.ai"
+        ],
+        "iAsk": [
+          "iask.ai"
+        ],
+        "Writesonic": [
+          "app.writesonic.com"
+        ],
+        "ChatGPT (also)": [
+          "labs.openai.com"
+        ]
+      }
+    },
+    "general_caveats": [
+      "Native mobile/desktop assistant apps frequently send no Referer; such clicks look like Direct traffic (widely reported, not operator-confirmed).",
+      "Browsers' default Referrer-Policy (strict-origin-when-cross-origin) means only the origin, not the path, is normally sent cross-site; host-based matching is the reliable unit.",
+      "utm_source values are attacker-controllable query parameters; treat them as attribution hints, not authentication."
+    ]
+  },
+  "robots_rfc9309": {
+    "source": "https://www.rfc-editor.org/rfc/rfc9309",
+    "source_txt": "https://www.rfc-editor.org/rfc/rfc9309.txt",
+    "fetched": "2026-10-14",
+    "rfc": "RFC 9309, Robots Exclusion Protocol, Standards Track, September 2022 (Koster, Illyes, Zeller, Sassman)",
+    "rules": {
+      "product_token_charset": {
+        "section": "2.2.1",
+        "quote": {
+          "text": "The product token MUST contain only uppercase and lowercase letters (\"a-z\" and \"A-Z\"), underscores (\"_\"), and hyphens (\"-\").",
+          "words": 18,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Valid tokens: [A-Za-z_-]+ (ABNF identifier = 1*(%x2D / %x41-5A / %x5F / %x61-7A)). Note: no digits allowed by the ABNF."
+      },
+      "group_matching_case_insensitive": {
+        "section": "2.2.1",
+        "quote": {
+          "text": "Crawlers MUST use case-insensitive matching to find the group that matches the product token and then obey the rules of the group.",
+          "words": 22,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Compare the user-agent line value to the crawler's product token case-insensitively (the RFC defines token equality, not prefix/substring matching of the line value)."
+      },
+      "merge_multiple_groups": {
+        "section": "2.2.1",
+        "quote": {
+          "text": "If there is more than one group matching the user-agent, the matching groups' rules MUST be combined into one group",
+          "words": 20,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Union all rules from every group whose user-agent line matches the token, then evaluate as one group."
+      },
+      "star_fallback": {
+        "section": "2.2.1",
+        "quote": {
+          "text": "If no matching group exists, crawlers MUST obey the group with a user-agent line with the \"*\" value, if present.",
+          "words": 20,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Use '*' group(s) only when no specific group matches. Specific match fully replaces '*' (no inheritance)."
+      },
+      "no_group_no_rules": {
+        "section": "2.2.1",
+        "quote": {
+          "text": "If no group matches the product token and there is no group with a user-agent line with the \"*\" value, or no groups are present at all, no rules apply.",
+          "words": 30,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Allow everything."
+      },
+      "group_definition": {
+        "section": "2.1",
+        "quote": {
+          "text": "The group is terminated by a user-agent line or end of file.",
+          "words": 12,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Consecutive user-agent lines share the following rules; a user-agent line after rules starts a new group. The last group may have no rules (allows everything)."
+      },
+      "longest_match": {
+        "section": "2.2.2",
+        "quote": {
+          "text": "The most specific match found MUST be used. The most specific match is the match that has the most octets.",
+          "words": 20,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Among all allow/disallow rules whose pattern matches the path, pick the one with the most octets (pattern length)."
+      },
+      "tie_break_allow": {
+        "section": "2.2.2",
+        "quote": {
+          "text": "If an \"allow\" rule and a \"disallow\" rule are equivalent, then the \"allow\" rule SHOULD be used.",
+          "words": 17,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "On equal-length/equivalent match, allow wins (SHOULD, not MUST)."
+      },
+      "no_match_allowed": {
+        "section": "2.2.2",
+        "quote": {
+          "text": "If no match is found amongst the rules in a group for a matching user-agent or there are no rules in the group, the URI is allowed.",
+          "words": 27,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Default allow."
+      },
+      "robots_txt_always_allowed": {
+        "section": "2.2.2",
+        "quote": {
+          "text": "The /robots.txt URI is implicitly allowed.",
+          "words": 6,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Never block /robots.txt itself."
+      },
+      "match_from_start_case_sensitive": {
+        "section": "2.2.2",
+        "quote": {
+          "text": "The matching SHOULD be case sensitive. The matching MUST start with the first octet of the path.",
+          "words": 17,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Anchored prefix match on the path (incl. query), case-sensitive."
+      },
+      "percent_encoding": {
+        "section": "2.2.2",
+        "quote": {
+          "text": "Octets in the URI and robots.txt paths outside the range of the ASCII coded character set, and those in the reserved range defined by [RFC3986], MUST be percent-encoded",
+          "words": 28,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Normalise both sides: percent-encode non-ASCII/reserved, decode percent-encoded unreserved ASCII, before comparing."
+      },
+      "rules_outside_groups": {
+        "section": "2.2.2",
+        "quote": {
+          "text": "The crawler SHOULD ignore \"disallow\" and \"allow\" rules that are not in any group",
+          "words": 14,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Drop rules before the first user-agent line."
+      },
+      "wildcards": {
+        "section": "2.2.3",
+        "quote": {
+          "text": "Crawlers MUST support the following special characters:",
+          "words": 7,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "'#' comment, '$' end-of-pattern anchor, '*' = 0 or more of any character (Figure 5). Literal * or $ in URIs should be %-encoded (%2A, %24)."
+      },
+      "other_records": {
+        "section": "2.2.4",
+        "quote": {
+          "text": "Parsing of other records MUST NOT interfere with the parsing of explicitly defined records in Section 2.",
+          "words": 17,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "e.g. a Sitemap line MUST NOT terminate a group."
+      },
+      "location": {
+        "section": "2.3",
+        "quote": {
+          "text": "The rules MUST be accessible in a file named \"/robots.txt\" (all lowercase) in the top-level path of the service.",
+          "words": 19,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Per scheme+authority (host:port); UTF-8, text/plain."
+      },
+      "redirects": {
+        "section": "2.3.1.2",
+        "quote": {
+          "text": "The crawlers SHOULD follow at least five consecutive redirects, even across authorities",
+          "words": 12,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Follow >=5 redirects; apply fetched rules to the initial authority; >5 MAY be treated as unavailable."
+      },
+      "status_4xx_unavailable": {
+        "section": "2.3.1.3",
+        "quote": {
+          "text": "If a server status code indicates that the robots.txt file is unavailable to the crawler, then the crawler MAY access any resources on the server.",
+          "words": 25,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "HTTP 400-499 => allow all."
+      },
+      "status_5xx_unreachable": {
+        "section": "2.3.1.4",
+        "quote": {
+          "text": "If the robots.txt file is unreachable due to server or network errors, this means the robots.txt file is undefined and the crawler MUST assume complete disallow.",
+          "words": 26,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "HTTP 500-599 or network error => disallow all; after a 'reasonably long period' (e.g. 30 days) MAY treat as unavailable or keep using a cached copy."
+      },
+      "parsing_errors": {
+        "section": "2.3.1.5",
+        "quote": {
+          "text": "Crawlers MUST try to parse each line of the robots.txt file. Crawlers MUST use the parseable rules.",
+          "words": 17,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Skip unparseable lines; keep the rest."
+      },
+      "caching": {
+        "section": "2.4",
+        "quote": {
+          "text": "Crawlers SHOULD NOT use the cached version for more than 24 hours, unless the robots.txt file is unreachable.",
+          "words": 18,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "Cache <=24h (MAY honour RFC 9111 cache-control)."
+      },
+      "size_limit": {
+        "section": "2.5",
+        "quote": {
+          "text": "The parsing limit MUST be at least 500 kibibytes [KiB].",
+          "words": 10,
+          "verified_verbatim": true
+        },
+        "implementation_rule": "CORRECTION to the brief: 500 KiB is a MINIMUM parsing limit, not a maximum file size. Parse at least the first 512,000 bytes; you MAY ignore content beyond your limit if limit >= 500 KiB."
+      }
+    },
+    "examples": {
+      "longest_match_5_2": "User-Agent: foobot / Allow: /example/page/ / Disallow: /example/page/disallowed.gif -> the Disallow wins for /example/page/disallowed.gif (longer match).",
+      "simple_example_5_1": "Includes 'Disallow: *.gif$' in the '*' group."
+    },
+    "errata_status_2026_10_14": {
+      "url": "https://www.rfc-editor.org/errata/rfc9309",
+      "note": "4 errata, all status 'Reported' (none Verified).",
+      "items": [
+        "7124 (Sec 5.2): example text says URI '.../disallow.gif' but means '.../disallowed.gif'.",
+        "7128 (Sec 2.2.2): Figure 4 should say U+30C4, not U+E38384.",
+        "7995 (Sec 2.2): ABNF path-pattern requires leading '/', yet Sec 5.1 uses 'Disallow: *.gif$' -> accept patterns starting with '*'.",
+        "8895 (Sec 2.3.1.5, reported 2026-04-28 by Fabrice Canel): proposes OPTIONAL comma-separated user-agent lists ('User-agent: a, b'). Not part of the RFC."
+      ]
+    },
+    "operator_deviations_seen_in_part_A": [
+      "Google: some crawlers have more than one token (e.g. Googlebot-Image also obeys Googlebot; Google-CloudVertexBot also obeys Googlebot) - 'you need to match only one crawler token for a rule to apply'.",
+      "Apple: if no Applebot group but a Googlebot group exists, Applebot follows the Googlebot group. Applebot ignores Crawl-delay.",
+      "Amazon: Amzn-SearchBot follows rules given to 'other search bots' if not named; unfetchable robots.txt treated as non-existent (contrast RFC 5xx => disallow all); cached copy up to 30 days.",
+      "Google special-case crawlers (e.g. APIs-Google, AdsBot) ignore the '*' group.",
+      "User-triggered fetchers (ChatGPT-User, Perplexity-User, Google user-triggered fetchers incl. Google-Agent, Meta-ExternalFetcher, Amzn-User) may ignore robots.txt per their operators; Anthropic's Claude-User and Mistral's MistralAI-User are documented as robots-governed.",
+      "Crawl-delay (non-standard): honored by ClaudeBot, CCBot, YouBot, Diffbot; not by Applebot or Amazon bots."
+    ]
+  }
+}

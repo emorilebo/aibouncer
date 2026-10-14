@@ -1,0 +1,5 @@
+/aibouncer
+/dist/
+*.test
+*.out
+testdata/fuzz/

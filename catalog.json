@@ -1,0 +1,648 @@
+{
+  "generated": "2026-10-14",
+  "agents": [
+    {
+      "id": "openai-gptbot",
+      "name": "GPTBot",
+      "operator": "OpenAI",
+      "purpose": "training",
+      "user_agent_tokens": [
+        "GPTBot"
+      ],
+      "robots_token": "GPTBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://openai.com/gptbot.json"
+      ],
+      "docs": "https://developers.openai.com/api/docs/bots"
+    },
+    {
+      "id": "openai-oai-searchbot",
+      "name": "OAI-SearchBot",
+      "operator": "OpenAI",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "OAI-SearchBot"
+      ],
+      "robots_token": "OAI-SearchBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://openai.com/searchbot.json"
+      ],
+      "docs": "https://developers.openai.com/api/docs/bots"
+    },
+    {
+      "id": "openai-chatgpt-user",
+      "name": "ChatGPT-User",
+      "operator": "OpenAI",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "ChatGPT-User"
+      ],
+      "robots_token": "ChatGPT-User",
+      "robots_txt": "may_ignore_user_initiated",
+      "ip_ranges": [
+        "https://openai.com/chatgpt-user.json"
+      ],
+      "docs": "https://developers.openai.com/api/docs/bots"
+    },
+    {
+      "id": "openai-oai-adsbot",
+      "name": "OAI-AdsBot",
+      "operator": "OpenAI",
+      "purpose": "other",
+      "user_agent_tokens": [
+        "OAI-AdsBot"
+      ],
+      "robots_token": "OAI-AdsBot",
+      "robots_txt": "unspecified",
+      "ip_ranges": [
+        "https://openai.com/adsbot.json"
+      ],
+      "docs": "https://developers.openai.com/api/docs/bots"
+    },
+    {
+      "id": "openai-chatgpt-agent",
+      "name": "ChatGPT agent",
+      "operator": "OpenAI",
+      "purpose": "agent",
+      "robots_txt": "unspecified",
+      "docs": "https://help.openai.com/en/articles/11845367-chatgpt-works-cloud-browser-allowlisting",
+      "web_bot_auth": {
+        "signature_agent": "\"https://chatgpt.com\"",
+        "key_directory": "https://chatgpt.com/.well-known/http-message-signatures-directory",
+        "experimental": false
+      }
+    },
+    {
+      "id": "anthropic-claudebot",
+      "name": "ClaudeBot",
+      "operator": "Anthropic",
+      "purpose": "training",
+      "user_agent_tokens": [
+        "ClaudeBot"
+      ],
+      "robots_token": "ClaudeBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://claude.com/crawling/bots.json"
+      ],
+      "docs": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    {
+      "id": "anthropic-claude-user",
+      "name": "Claude-User",
+      "operator": "Anthropic",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "Claude-User"
+      ],
+      "robots_token": "Claude-User",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://claude.com/crawling/bots.json"
+      ],
+      "docs": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    {
+      "id": "anthropic-claude-searchbot",
+      "name": "Claude-SearchBot",
+      "operator": "Anthropic",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "Claude-SearchBot"
+      ],
+      "robots_token": "Claude-SearchBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://claude.com/crawling/bots.json"
+      ],
+      "docs": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    {
+      "id": "perplexity-perplexitybot",
+      "name": "PerplexityBot",
+      "operator": "Perplexity",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "PerplexityBot"
+      ],
+      "robots_token": "PerplexityBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://www.perplexity.ai/perplexitybot.json"
+      ],
+      "docs": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+    },
+    {
+      "id": "perplexity-perplexity-user",
+      "name": "Perplexity-User",
+      "operator": "Perplexity",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "Perplexity-User"
+      ],
+      "robots_token": "Perplexity-User",
+      "robots_txt": "generally_ignores",
+      "ip_ranges": [
+        "https://www.perplexity.ai/perplexity-user.json"
+      ],
+      "docs": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+    },
+    {
+      "id": "google-googlebot",
+      "name": "Googlebot",
+      "operator": "Google",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "Googlebot"
+      ],
+      "robots_token": "Googlebot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+      ],
+      "reverse_dns": [
+        "googlebot.com"
+      ],
+      "docs": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+    },
+    {
+      "id": "google-google-extended",
+      "name": "Google-Extended",
+      "operator": "Google",
+      "purpose": "training",
+      "robots_token": "Google-Extended",
+      "robots_only": true,
+      "robots_txt": "control_token_only",
+      "docs": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+    },
+    {
+      "id": "google-googleother",
+      "name": "GoogleOther",
+      "operator": "Google",
+      "purpose": "other",
+      "user_agent_tokens": [
+        "GoogleOther"
+      ],
+      "robots_token": "GoogleOther",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+      ],
+      "reverse_dns": [
+        "googlebot.com"
+      ],
+      "docs": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+    },
+    {
+      "id": "google-cloudvertexbot",
+      "name": "Google-CloudVertexBot",
+      "operator": "Google",
+      "purpose": "other",
+      "user_agent_tokens": [
+        "Google-CloudVertexBot"
+      ],
+      "robots_token": "Google-CloudVertexBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+      ],
+      "reverse_dns": [
+        "googlebot.com"
+      ],
+      "docs": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+    },
+    {
+      "id": "google-google-agent",
+      "name": "Google-Agent",
+      "operator": "Google",
+      "purpose": "agent",
+      "user_agent_tokens": [
+        "Google-Agent"
+      ],
+      "robots_txt": "generally_ignores",
+      "ip_ranges": [
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "reverse_dns": [
+        "google.com"
+      ],
+      "docs": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers",
+      "web_bot_auth": {
+        "signature_agent": "g=\"https://agent.bot.goog\"",
+        "key_directory": "https://agent.bot.goog/.well-known/http-message-signatures-directory",
+        "experimental": true
+      }
+    },
+    {
+      "id": "google-gemini-notebook",
+      "name": "Gemini Notebook fetcher",
+      "operator": "Google",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "Google-GeminiNotebook"
+      ],
+      "robots_txt": "generally_ignores",
+      "ip_ranges": [
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json"
+      ],
+      "shared_ip_ranges": [
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json"
+      ],
+      "reverse_dns": [
+        "google.com"
+      ],
+      "docs": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers"
+    },
+    {
+      "id": "microsoft-bingbot",
+      "name": "Bingbot",
+      "operator": "Microsoft",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "bingbot"
+      ],
+      "robots_token": "bingbot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://www.bing.com/toolbox/bingbot.json"
+      ],
+      "reverse_dns": [
+        "search.msn.com"
+      ],
+      "docs": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
+    },
+    {
+      "id": "apple-applebot",
+      "name": "Applebot",
+      "operator": "Apple",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "Applebot"
+      ],
+      "robots_token": "Applebot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://search.developer.apple.com/applebot.json"
+      ],
+      "reverse_dns": [
+        "applebot.apple.com"
+      ],
+      "docs": "https://support.apple.com/en-us/119829"
+    },
+    {
+      "id": "apple-applebot-extended",
+      "name": "Applebot-Extended",
+      "operator": "Apple",
+      "purpose": "training",
+      "robots_token": "Applebot-Extended",
+      "robots_only": true,
+      "robots_txt": "control_token_only",
+      "docs": "https://support.apple.com/en-us/119829"
+    },
+    {
+      "id": "meta-externalagent",
+      "name": "Meta-ExternalAgent",
+      "operator": "Meta",
+      "purpose": "training",
+      "user_agent_tokens": [
+        "meta-externalagent"
+      ],
+      "robots_token": "meta-externalagent",
+      "robots_txt": "honors",
+      "docs": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers"
+    },
+    {
+      "id": "meta-externalfetcher",
+      "name": "Meta-ExternalFetcher",
+      "operator": "Meta",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "meta-externalfetcher"
+      ],
+      "robots_token": "meta-externalfetcher",
+      "robots_txt": "may_ignore_user_initiated",
+      "docs": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers"
+    },
+    {
+      "id": "meta-webindexer",
+      "name": "Meta-WebIndexer",
+      "operator": "Meta",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "meta-webindexer"
+      ],
+      "robots_token": "meta-webindexer",
+      "robots_txt": "honors",
+      "docs": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers"
+    },
+    {
+      "id": "commoncrawl-ccbot",
+      "name": "CCBot",
+      "operator": "Common Crawl Foundation",
+      "purpose": "other",
+      "user_agent_tokens": [
+        "CCBot"
+      ],
+      "robots_token": "CCBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://index.commoncrawl.org/ccbot.json"
+      ],
+      "reverse_dns": [
+        "crawl.commoncrawl.org"
+      ],
+      "docs": "https://commoncrawl.org/ccbot"
+    },
+    {
+      "id": "amazon-amazonbot",
+      "name": "Amazonbot",
+      "operator": "Amazon",
+      "purpose": "training",
+      "user_agent_tokens": [
+        "Amazonbot"
+      ],
+      "robots_token": "Amazonbot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://developer.amazon.com/amazonbot/ip-addresses/"
+      ],
+      "docs": "https://developer.amazon.com/amazonbot"
+    },
+    {
+      "id": "amazon-amzn-searchbot",
+      "name": "Amzn-SearchBot",
+      "operator": "Amazon",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "Amzn-SearchBot"
+      ],
+      "robots_token": "Amzn-SearchBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/"
+      ],
+      "docs": "https://developer.amazon.com/amazonbot"
+    },
+    {
+      "id": "amazon-amzn-user",
+      "name": "Amzn-User",
+      "operator": "Amazon",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "Amzn-User"
+      ],
+      "robots_token": "Amzn-User",
+      "robots_txt": "may_ignore_user_initiated",
+      "ip_ranges": [
+        "https://developer.amazon.com/amazonbot/live-ip-addresses/"
+      ],
+      "docs": "https://developer.amazon.com/amazonbot"
+    },
+    {
+      "id": "duckduckgo-duckassistbot",
+      "name": "DuckAssistBot",
+      "operator": "DuckDuckGo",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "DuckAssistBot"
+      ],
+      "robots_token": "DuckAssistBot",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://duckduckgo.com/duckassistbot.json"
+      ],
+      "docs": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+    },
+    {
+      "id": "mistral-mistralai-user",
+      "name": "MistralAI-User",
+      "operator": "Mistral AI",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "MistralAI-User"
+      ],
+      "robots_token": "MistralAI-User",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://mistral.ai/mistralai-user-ips.json"
+      ],
+      "docs": "https://docs.mistral.ai/robots"
+    },
+    {
+      "id": "mistral-mistralai-index",
+      "name": "MistralAI-Index",
+      "operator": "Mistral AI",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "MistralAI-Index"
+      ],
+      "robots_token": "MistralAI-Index",
+      "robots_txt": "honors",
+      "ip_ranges": [
+        "https://mistral.ai/mistralai-index-ips.json"
+      ],
+      "docs": "https://docs.mistral.ai/robots"
+    },
+    {
+      "id": "mistral-mistralai-training",
+      "name": "MistralAI-Training",
+      "operator": "Mistral AI",
+      "purpose": "training",
+      "user_agent_tokens": [
+        "MistralAI-Training"
+      ],
+      "robots_token": "MistralAI-Training",
+      "robots_txt": "honors",
+      "docs": "https://docs.mistral.ai/robots"
+    },
+    {
+      "id": "you-youbot",
+      "name": "YouBot",
+      "operator": "You.com",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "YouBot"
+      ],
+      "robots_token": "YouBot",
+      "robots_txt": "honors",
+      "cidrs": [
+        "68.67.112.0/24"
+      ],
+      "reverse_dns": [
+        "search.you.com"
+      ],
+      "docs": "https://docs.you.com/youbot",
+      "web_bot_auth": {
+        "signature_agent": "",
+        "key_directory": "https://you.com/.well-known/http-message-signatures-directory",
+        "experimental": false
+      }
+    },
+    {
+      "id": "diffbot-diffbot",
+      "name": "Diffbot",
+      "operator": "Diffbot",
+      "purpose": "search",
+      "user_agent_tokens": [
+        "Diffbot"
+      ],
+      "robots_token": "Diffbot",
+      "robots_txt": "honors_by_default",
+      "docs": "https://www.diffbot.com/docs/crawl/faq/robots-txt"
+    },
+    {
+      "id": "diffbot-diffbot-user",
+      "name": "Diffbot-User",
+      "operator": "Diffbot",
+      "purpose": "user",
+      "user_agent_tokens": [
+        "Diffbot-User"
+      ],
+      "robots_token": "Diffbot-User",
+      "robots_txt": "unspecified",
+      "docs": "https://www.diffbot.com/docs/crawl/faq/robots-txt"
+    },
+    {
+      "id": "ai2-ai2bot",
+      "name": "AI2Bot",
+      "operator": "Allen Institute for AI (Ai2)",
+      "purpose": "training",
+      "user_agent_tokens": [
+        "AI2Bot"
+      ],
+      "robots_token": "AI2Bot",
+      "robots_txt": "unspecified",
+      "docs": "https://allenai.org/crawler"
+    }
+  ],
+  "referrals": [
+    {
+      "assistant": "ChatGPT",
+      "hosts": [
+        "chatgpt.com",
+        "chat.openai.com"
+      ],
+      "utm_sources": [
+        "chatgpt.com"
+      ],
+      "evidence": "official"
+    },
+    {
+      "assistant": "Perplexity",
+      "hosts": [
+        "perplexity.ai"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Gemini",
+      "hosts": [
+        "gemini.google.com",
+        "bard.google.com"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Microsoft Copilot",
+      "hosts": [
+        "copilot.microsoft.com"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Claude",
+      "hosts": [
+        "claude.ai"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "DeepSeek",
+      "hosts": [
+        "chat.deepseek.com"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Grok",
+      "hosts": [
+        "grok.com",
+        "x.com/i/grok"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Meta AI",
+      "hosts": [
+        "meta.ai"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Mistral Le Chat / Vibe",
+      "hosts": [
+        "chat.mistral.ai"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "You.com",
+      "hosts": [
+        "you.com"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Duck.ai",
+      "hosts": [
+        "duck.ai"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "NotebookLM / Gemini Notebook",
+      "hosts": [
+        "notebooklm.google.com"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Qwen",
+      "hosts": [
+        "chat.qwen.ai"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "Baidu ERNIE / Yiyan",
+      "hosts": [
+        "yiyan.baidu.com",
+        "ai.baidu.com"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    },
+    {
+      "assistant": "ChatGLM",
+      "hosts": [
+        "chatglm.cn"
+      ],
+      "utm_sources": [],
+      "evidence": "reputable-observed"
+    }
+  ]
+}
